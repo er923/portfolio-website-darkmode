@@ -1,0 +1,303 @@
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+:root {
+  --main-bg: #fdf6ee;
+  --sidebar-bg: #fff;
+  --text-dark: #111;
+  --highlight: #b08968;
+  --btn-bg: #111;
+  --btn-text: #fff;
+  --hover-bg: #b08968;
+}
+
+body {
+  display: flex;
+  background: var(--main-bg);
+  color: var(--text-dark);
+}
+
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-bg);
+  min-height: 100vh;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar .logo {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: var(--highlight);
+}
+
+.sidebar nav ul {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar nav ul li {
+  margin: 1rem 0;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: var(--text-dark);
+  display: block;
+  text-align: center;
+  padding: 0.5rem;
+  transition: background 0.3s;
+}
+
+.sidebar nav ul li a.active,
+.sidebar nav ul li a:hover {
+  background: var(--hover-bg);
+  color: white;
+  border-radius: 5px;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--highlight);
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.highlight {
+  color: var(--highlight);
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 14%;
+}
+
+.intro h1, .intro h2 {
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  max-width: 500px;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--hover-bg);
+}
+
+.profile-pic img {
+  width: 250px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.about {
+  padding: 9% 5% 5% 7%;
+}
+
+.about-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.about-details ul {
+  list-style: none;
+  padding-top: 12%;
+}
+
+/* .skills p {
+  margin: 0.5rem 0;
+} */
+/* Skill Bars Container */
+.skills-container {
+  margin-top: 2rem;
+  max-width: 600px;
+  padding-left: 50%;
+}
+
+/* Skill Item */
+.skill {
+  margin-bottom: 1.5rem;
+}
+
+/* Skill Name + Percentage */
+.skill-name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+/* Skill Bar Track */
+.skill-bar {
+  background: #333; /* Dark track */
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Skill Fill */
+.skill-fill {
+  background: orange;  /* Progress color */
+  height: 100%;
+  width: 0;
+  animation: fillAnimation 2s forwards;
+  border-radius: 5px;
+}
+
+/* Animation for fill effect */
+@keyframes fillAnimation {
+  from { width: 0; }
+  to { width: var(--fill-width); } /* Dynamically from inline style */
+}
+
+/* Animation for Slide Down */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-70px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to desired containers */
+.slide-down {
+  animation: slideDown 1s ease-out forwards;
+}
+
+
+.buttons .btn {
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+.portfolio {
+  padding: 11% 5% 5% 12%
+}
+
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.portfolio-gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact {
+  padding: 11% 5% 5% 12%;
+}
+.contact-info {
+  margin: 1rem 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+}
+
+button.btn {
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: none;
+    padding: 0.5rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .home {
+    flex-direction: column;
+  }
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #111;
+  color: #fdf6ee;
+}
+
+body.dark-mode .sidebar {
+  background: #1e1e1e;
+}
+
+body.dark-mode .sidebar nav ul li a {
+  color: #fdf6ee;
+}
+
+body.dark-mode .sidebar nav ul li a.active,
+body.dark-mode .sidebar nav ul li a:hover {
+  background: var(--highlight);
+}
+
+body.dark-mode .btn {
+  background: #fdf6ee;
+  color: #111;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
