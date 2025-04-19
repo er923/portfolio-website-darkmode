@@ -1,40 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eleanor Mumbi</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./home1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+ 
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </head>
 <body>
-
-  <aside class="sidebar">
-    <a href="./index.html"><h2 class="logo">E</h2></a>
+  <header>
+    <a href="#home" class="logo">Eleanor Mumbi</a>
+    <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">☰</button>
     <nav>
       <ul>
-        <li><a href="./index.html" class="active">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./projects.html">Projects</a></li>
-        <li><a href="./contact.html">Contacttest</a></li>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button></li>
       </ul>
     </nav>
-  </aside>
+  </header>  
+  
 
-  <main>
-    <section id="home" class="section home slide-down">
-      <div class="intro">
-        <h1>Hello, my name is <span class="highlight">Eleanor Robertson</span></h1>
-        <h2>I'm a <span class="highlight">Computer Science Student</span></h2>
-        <p>Blending code and curiosity, I create software built for efficiency and seamless user experience.</p>
-        <!-- <a href="#contact" class="btn">Hire Me</a> -->
-      </div>
-      <div class="profile-pic">
-        <img src="./assets/IMG_7961 (1).jpg" alt="Profile Picture" />
-      </div>
-    </section>
+  <section id="home" class="hero">
+    <img src="./assets/IMG_7961 (1).jpg" alt="Eleanor's Profile Picture">
+    <h1>Hello, I’m <strong>Eleanor Robertson</strong></h1>
+    <h2>A Computer Science Student</h2>
+    <p>Blending code and curiosity, I create software built for efficiency and seamless user experience.</p>
+  </section>
 
-  </main>
-  <script src="script.js"></script>
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm Eleanor Robertson, a computer science student with a passion for design & development. Experienced in Python, Java, JavaScript, and more.</p>
+    <div class="about-details">
+      <ul>
+        <li><strong>Email:</strong> elleroberts.emr@gmail.com</li>
+        <li><strong>City:</strong> New York</li>
+      </ul>
+      <div class="skills-container">
+        <div class="skill">
+          <div class="skill-name">Java<span>86%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 86%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">C++<span>66%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 66%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Javascript<span>96%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 96%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Python<span>76%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width: 76%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="portfolio-gallery">
+      <div class="project-card">
+        <a href="https://face-app-b77w.onrender.com/" target="_blank"><img src="./assets/Face-app.png" alt="Face Detection Web App" style="width:100%; border-radius: 8px; margin-bottom: 1rem;"></a>
+      </div>
+      
+      <div class="project-card">
+        <a href="./projects/ElChurrito/index.html" target="_blank"><img src="./assets/elChurrito.png" alt="Project 2" style="width:100%; border-radius: 8px; margin-bottom: 1rem;"></a>
+      </div>
+      <div class="project-card">
+        <img src="./assets/Sansoucci-Tours-Bermuda.jpg" alt="Project 3" style="width:100%; border-radius: 8px; margin-bottom: 1rem;"></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-form">
+      <form action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
 </body>
 </html>
