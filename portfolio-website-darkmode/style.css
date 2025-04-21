@@ -1,4 +1,3 @@
-
 :root {
   --sand: #d0b084;
   --neutral: #fdfbf9;
@@ -129,7 +128,6 @@ section {
 
 .projects {
   background: #fff;
-  padding: 11% 5% 5% 12%
 }
 
 .projects h2,
@@ -138,6 +136,29 @@ section {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.portfolio-gallery {
+  display: flex;
+  align-items: flex-start;
+}
+
+.project-card {
+  background-color: var(--sand);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  width: 25%;
+  margin: 2%;
+}
+
 
 .about {
   background-color: var(--about-bg);
@@ -269,6 +290,14 @@ section {
 
   body.menu-open nav ul {
     max-height: 500px;
+  }
+
+  .portfolio-gallery {
+    display: block;
+  }
+
+  .project-card {
+    width: 80%;
   }
 }
 
